@@ -1,19 +1,26 @@
-let screen = document.getElementById('pantalla');
-const buttons = document.querySelectorAll("#botonera a");
- 
-for (const button of buttons) {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
- 
-        if (e.target.dataset.key == 'equal') {
-            screen.textContent = eval(screen.textContent);
-            if (screen.textContent.length > 8) {
-                screen.textContent = eval(screen.textContent).toFixed(8);
-            }
-        } else if (e.target.dataset.key == 'clear') {
-            screen.textContent = '';
-        } else {
-            screen.textContent = screen.textContent + e.target.dataset.key;
-        }   
-    });
+function display(val) {
+  document.getElementById('result').value += val;
 }
+
+function clearScreen() {
+  document.getElementById('result').value = "";
+}
+
+function solve() {
+  let x = document.getElementById('result').value;
+  let y = eval(x);
+  document.getElementById('result').value = y;
+  return y;
+}
+ 
+
+  const colorSwitch = document.querySelector('#switchmodo input[type="checkbox"]');
+  function cambiaTema(ev){
+      if(ev.target.checked){
+          document.documentElement.setAttribute('tema', 'dark');
+      } else {
+          document.documentElement.setAttribute('tema', 'light');
+      }
+  }
+  colorSwitch.addEventListener('change', cambiaTema);
+
