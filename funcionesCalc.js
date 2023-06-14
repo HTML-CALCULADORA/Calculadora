@@ -15,28 +15,25 @@ function solve() {
 
 
 //modo oscuro
-const colorSwitch = document.querySelector('#switchmodo input[type="checkbox"]');
-const textSwitch = document.querySelector('#switchzoom input[type="checkbox"]');
-let oscuro = 0;
+
 function cambiaTema(ev) {
     if (ev.target.checked) {
         document.documentElement.setAttribute('tema', 'darknormal');
-        oscuro = 1;
+      
     } else {
         document.documentElement.setAttribute('tema', 'lightnormal');
-        oscuro = 0;
+     
     }
 }
 //aumento texto
 function aumTexto(ev) {
-
     if (ev.target.checked) {
         document.documentElement.setAttribute('tema', 'darkgrande');
-        ocuro = 1;
+    
     }
     else {
         document.documentElement.setAttribute('tema', 'lightgrande');
-        oscuro = 0;
+    
     }
 }
 

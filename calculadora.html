@@ -6,10 +6,16 @@
     <title>Calculadora</title>
     <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script>
     <link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
-   
 </head>
-
 <body>
+        <header>
+        <h1 id="titulo">Tu Calculadora</h1>
+        <nav id="ayuda">
+            <button class="nada claro" onclick="aumTexto(event)">Ampliar</button>
+            <button class="nada claro">Interlineado</button>
+            <button class="nada claro" onclick="cambiaTema(event)">Oscuro</button>
+        </nav>
+    </header>
     <div class="contenedor">
         <div class="calculadora">
             <div class="display">
@@ -32,21 +38,8 @@
             <button class="col-2 numero">0</button>
             <button class="numero">.</button>
             <button class="operador" value="igual">=</button>
-        </div>
-        <section class="row justify-content-center">
-            <label id="switchmodo">
-                <input type="checkbox">
-                <span class="modoslider round"></span>
-            </label>
-            <i id="icono" class="fa-sharp fa-solid fa-circle-half-stroke fa-2xl"></i>
-            <br><br>
-            <label id="switchzoom">
-                <input type="checkbox">
-                <span class="modoslider round"></span>
-            </label>
-            <i id="icono" class="fa-sharp fa-solid fa-magnifying-glass-plus fa-2xl"></i>
-        </section>
-    </div>
+        </div>    
+   </div>
     <script src="funcionesCalc.js"></script>
 </body>
 
