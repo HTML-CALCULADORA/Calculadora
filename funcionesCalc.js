@@ -12,15 +12,42 @@ function solve() {
   document.getElementById('result').value = y;
   return y;
 }
- 
-
-  const colorSwitch = document.querySelector('#switchmodo input[type="checkbox"]');
-  function cambiaTema(ev){
-      if(ev.target.checked){
-          document.documentElement.setAttribute('tema', 'dark');
-      } else {
-          document.documentElement.setAttribute('tema', 'light');
-      }
+//modo oscuro
+function cambiaTema() {
+alert(tema.value);
+    if ([tema="darknormal"]) {
+        document.documentElement.setAttribute('tema', 'darknormal');
+        
+    } else {
+        document.documentElement.setAttribute('tema', 'lightnormal');
+      
+    }
+}
+//aumento texto
+function aumTexto() {
+    if ([tema="lightnormal"]) {
+    
+       document.documentElement.setAttribute('tema', 'lightgrande');
+    }
+    else if([tema="darknormal"]) {
+      alert('2')
+        document.documentElement.setAttribute('tema', 'darkgrande');
+    }
+    else {
   }
-  colorSwitch.addEventListener('change', cambiaTema);
+}
+function cambiar() {
+  var boton = document.getElementById('button amptext');
 
+  if (boton.innerHTML == 'Ampliar') {
+    boton.innerHTML = 'Reducir';
+}
+else { boton.innerHTML = 'Ampliar'; }
+}
+
+/*Menu responsive*/
+function onMenuClick() {
+var navbar = document.getElementById("navigation-bar");
+var responsive_class_name = "responsive";
+navbar.classList.toggle(responsive_class_name);
+} 
