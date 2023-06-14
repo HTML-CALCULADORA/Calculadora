@@ -1,97 +1,159 @@
-.screen {
-    height: 50px;
-    width: 150px;
-    margin-bottom: 10px;
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+    font-size: var(--font-size);
 }
-
-.keys {
-    width: 250px;
-}
-
-.btn,
-.operator {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 5px;
-}
-
-
 
 :root {
-  --color-fuente: #000;
-  --color-fondo: #fff;
-}
-
-[tema="light"]{
     --color-fuente: #000;
     --color-fondo: #fff;
+    --font-size: 12px;
 }
-[tema="dark"]{
-  --color-fuente: #fff;
-  --color-fondo: #000;
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-body {
-  background-color:var(--color-fondo);
-  color:var(--color-fuente) 
+
+.calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: 160px repeat(5, 75px);
+    padding: 15px;
+}
+
+button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border: solid;
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+    font-size: var(--font-size);
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.display {
+    grid-column: 1 / -1;
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    border: solid;
+    text-align: right;
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+    font-size: var(--font-size);
+}
+
+[tema="lightgrande"] {
+    --color-fuente: #000;
+    --color-fondo: #fff;
+    --font-size: 25px;
+}
+
+[tema="darkgrande"] {
+    --color-fuente: #fff;
+    --color-fondo: #000;
+    --font-size: 25px;
+}
+
+[tema="lightnormal"] {
+    --color-fuente: #000;
+    --color-fondo: #fff;
+    --font-size: 12px;
+}
+
+[tema="darknormal"] {
+    --color-fuente: #fff;
+    --color-fondo: #000;
+    --font-size: 12px;
 }
 
 /*Botón de cambio de tema*/
-
 #switchmodo {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
-  
-  #switchmodo input { 
+}
+
+#switchmodo input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  .modoslider {
+}
+
+/*Botón de zoom texto*/
+#switchzoom {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+#switchzoom input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/*Funcionamiento boton slider modo oscuro*/
+.modoslider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:var(--color-fuente);
+    background-color: var(--color-fuente);
+    font-size: var(--font-size);
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .modoslider:before {
+}
+
+.modoslider:before {
     position: absolute;
     content: "";
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color:var(--color-fondo);
+    background-color: var(--color-fondo);
+    font-size: var(--font-size);
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .modoslider {
+}
+
+input:checked+.modoslider {
     background-color: var(--color-fuente);
-  }
-  
-  input:focus + .modoslider {
+    font-size: var(--font-size);
+}
+
+input:focus+.modoslider {
     box-shadow: 0 0 1px var(--color-fuente);
-  }
-  
-  input:checked + .modoslider:before {
+    font-size: var(--font-size);
+}
+
+input:checked+.modoslider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
+}
 
-  .modoslider.round {
+.modoslider.round {
     border-radius: 34px;
-  }
-  
-  .modoslider.round:before {
+}
+
+.modoslider.round:before {
     border-radius: 50%;
-  }
+}

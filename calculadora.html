@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Calculadora con JavaScript</title>
-<link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script>
+    <link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
+   
+</head>
 
-<script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script></head>
 <body>
-
-<main class="container">
-  
-     <input type="text" id="result" class="screen" />
-    <input type="button" value="C" onclick="clearScreen()" class="btn" />
-
-    <div class="keys">
-        <input type="button" value="7" class="btn" onclick="display('7')" />
-        <input type="button" value="8" class="btn" onclick="display('8')" />
-        <input type="button" value="9" class="btn" onclick="display('9')" />
-
-        <input type="button" value="/" class="operator" onclick="display('/')" />
-        <input type="button" value="4" class="btn" onclick="display('4')" />
-        <input type="button" value="5" class="btn" onclick="display('5')" />
-        <input type="button" value="6" class="btn" onclick="display('6')" />
-
-        <input type="button" value="*" class="operator" onclick="display('*')" />
-        <input type="button" value="1" class="btn" onclick="display('1')" />
-        <input type="button" value="2" class="btn" onclick="display('2')" />
-        <input type="button" value="3" class="btn" onclick="display('3')" />
-
-        <input type="button" value="-" class="operator" onclick="display('-')" />
-        <input type="button" value="0" class="btn" onclick="display('0')" />
-
-        <input type="button" value="." class="operator" onclick="display('.')" />
-        <input type="button" value="=" class="btn" onclick="solve()" />
-        <input type="button" value="+" class="operator" onclick="display('+')" />
+    <div class="contenedor">
+        <div class="calculadora">
+            <div class="display">
+            </div>
+            <button class="col-2" onclick="borrar()">C</button>
+            <button class="operador" onclick="borrar()">&larr;</button>
+            <button class="operador" value="dividir">/</button>
+            <button class="numero">7</button>
+            <button class="numero">8</button>
+            <button class="numero">9</button>
+            <button class="operador" value="multiplicar">X</button>
+            <button class="numero">4</button>
+            <button class="numero">5</button>
+            <button class="numero">6</button>
+            <button class="operador" value="restar">-</button>
+            <button class="numero">1</button>
+            <button class="numero">2</button>
+            <button class="numero">3</button>
+            <button class="operador" value="sumar">+</button>
+            <button class="col-2 numero">0</button>
+            <button class="numero">.</button>
+            <button class="operador" value="igual">=</button>
+        </div>
+        <section class="row justify-content-center">
+            <label id="switchmodo">
+                <input type="checkbox">
+                <span class="modoslider round"></span>
+            </label>
+            <i id="icono" class="fa-sharp fa-solid fa-circle-half-stroke fa-2xl"></i>
+            <br><br>
+            <label id="switchzoom">
+                <input type="checkbox">
+                <span class="modoslider round"></span>
+            </label>
+            <i id="icono" class="fa-sharp fa-solid fa-magnifying-glass-plus fa-2xl"></i>
+        </section>
     </div>
-    <section class="row justify-content-center">
-      <label id="switchmodo">
-        <input type="checkbox"> 
-        <span class="modoslider round"></span>
-    </label>
-    <i id="icono" class="fa-sharp fa-solid fa-circle-half-stroke fa-2xl"></i>
-    <label id="switch">
-      <input type="checkbox"> 
-      <span class="slider round"></span>
-  </label>
-    <i id="icono" class="fa-sharp fa-solid fa-magnifying-glass-plus fa-2xl"></i>  
-  </section>
-</main>
-<script src="funcionesCalc.js"></script>
+    <script src="funcionesCalc.js"></script>
 </body>
+
 </html>
